@@ -19,7 +19,8 @@
   },
   "depends" : [
     "Digest",
-    "MIME::Base64"
+    "MIME::Base64",
+    "Crypt::Random"
   ],
   "description" : "WebSocket library for Perl6",
   "test-depends" : [

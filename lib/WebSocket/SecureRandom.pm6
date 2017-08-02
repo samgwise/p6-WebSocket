@@ -1,16 +1,8 @@
 use v6;
 
 unit class WebSocket::SecureRandom;
+use Crypt::Random;
 
-# TODO: mattnize
-has $.fh;
-
-method new() {
-    my $fh = open '/dev/urandom', :r, :bin;
-    self.bless(fh => $fh);
+method read(Int $bytes --> Buf) {
+    crypt_random_buf($bytes);
 }
-
-method read(Int $bytes) {
-    $!fh.read($bytes);
-}
-
